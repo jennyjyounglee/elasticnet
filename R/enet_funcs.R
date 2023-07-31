@@ -451,7 +451,7 @@ function(x,K,para,type=c("predictor","Gram"),sparse=c("penalty","varnum"),use.co
       u<-x%*%beta
       R<-qr.R(qr(u))
       pev<-diag(R^2)/totalvariance
-      obj<-list(call = call, type=type, K=K,loadings=beta,pev=pev,var.all=totalvariance, vn=vn,para=para,lambda=lambda)
+      obj<-list(call = call, type=type, K=K, loadings=beta, alpha=alpha, pev=pev,var.all=totalvariance, vn=vn,para=para,lambda=lambda)
       class(obj) <- "spca"
       obj  
 }
